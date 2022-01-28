@@ -1,5 +1,4 @@
-﻿//
-void FillArray(string[] absinthe)
+﻿void FillArray(string[] absinthe)
 {
     for (int i = 0; i < absinthe.GetLength(0); i++)
     {
@@ -8,29 +7,35 @@ void FillArray(string[] absinthe)
 }
 void PrintArray(string[] absinthe)
 {
-    Console.Write("[ ");
+    //Console.Write("[ ");
     for (int i = 0; i < absinthe.GetLength(0); i++)
     {
         Console.Write($"{absinthe[i]} ");
+        //if (absinthe[i].Length >= 1)
+        //{
+        //    Console.Write(" ");
+        //}
     }
-    Console.Write("]");
+    //Console.Write(" ]");
 }
-void NewArray(string[] absinthe)
+void NewArray(string[] absinthe, string[] zima)
 {
-    Console.Write(" = [ ");
+    int j = 0;
     for (int i = 0; i < absinthe.GetLength(0); i++)
     {
         if (absinthe[i].Length <= 3)
         {
-            Console.Write($"{absinthe[i]} ");
+            zima[j] = absinthe[i];
+            j++;
         }
-
     }
-     Console.Write("]");
 }
 Console.WriteLine("Введите N: ");
     int N = Convert.ToInt32(Console.ReadLine());
 string[] absinthe = new string[N];
+string[] zima = new string[N];
 FillArray(absinthe);
 PrintArray(absinthe);
-NewArray(absinthe);
+Console.Write("-> ");
+NewArray(absinthe, zima);
+PrintArray(zima);
